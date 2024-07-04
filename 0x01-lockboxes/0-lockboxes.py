@@ -1,27 +1,32 @@
 #!/usr/bin/python3
 '''LockBoxes Challenge'''
 
-from collections import deque
-
 
 def canUnlockAll(boxes):
-    '''Determines if all the boxes can be opened or not.
-
-    Args:
-        boxes (list of lists): Each sublist contains keys to other boxes.
-
+    '''determines if all the boxes can be opened or not
     Returns:
-        bool: True if all boxes can be opened, False otherwise.
+        True: all boxes can be opened
+        False: not all boxes can be opened
     '''
-    n = len(boxes)
-    visited = set()
-    to_visit = deque([0])  # Start with box 0 (the first box)
+    length = len(boxes)
+    keys = set()
+    opened_boxes = []
+    i = 0
 
-    while to_visit:
-        current_box = to_visit.popleft()
-        visited.add(current_box)
-        for key in boxes[current_box]:
-            if key < n and key not in visited:
-                to_visit.append(key)
+    while i < length:
+        oldi = i
+        opened_boxes.append(i)
+        keys.update(boxes[i])
+        for key in keys:
+            if key != 0 and key < length and key not in opened_boxes:
+                i = key
+                break
+        if oldi != i:
+            continue
+        else:
+            break
 
-    return len(visited) == n
+    for i in range(length):
+        if i not in opened_boxes and i != 0:
+            return False
+    return True
