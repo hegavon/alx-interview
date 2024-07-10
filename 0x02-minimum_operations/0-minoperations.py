@@ -3,15 +3,11 @@
 
 
 def minOperations(n):
-    '''Calculates the fewest number of operations needed to result in exactly
-    n H characters in this file.
-
-    Args:
-        n (int): The target number of 'H' characters to achieve.
-
+    '''calculates the fewest number of
+    operations needed to result in exactly n H
+    characters in this file.
     Returns:
-        int: The minimum number of operations needed.
-        Returns 0 if n is impossible.
+        Integer : if n is impossible to achieve, return 0
     '''
     pasted_chars = 1  # how many chars in the file
     clipboard = 0  # how many H's copied
@@ -43,4 +39,22 @@ def minOperations(n):
         if remaining < clipboard:
             return 0
 
-        # if can't
+        # if can't be devided
+        if remaining % pasted_chars != 0:
+            # paste current clipboard
+            pasted_chars += clipboard
+            # increment operations counter
+            counter += 1
+        else:
+            # copyall
+            clipboard = pasted_chars
+            # paste
+            pasted_chars += clipboard
+            # increment operations counter
+            counter += 2
+
+    # if got the desired result
+    if pasted_chars == n:
+        return counter
+    else:
+        return 0
