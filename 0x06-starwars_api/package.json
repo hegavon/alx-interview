@@ -1,0 +1,18 @@
+{
+  "name": "0x06-starwars_api",
+  "version": "1.0.0",
+  "description": "0x06. Star Wars API Description This project is about fetching and displaying information about Star Wars characters based on a given movie ID. The task requires interacting with the Star Wars API to retrieve character names and print them in the same order as they appear in the \"characters\" list of the /films/ endpoint.",
+  "main": "0-starwars_characters.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "eslint": "^9.8.0",
+    "globals": "^15.9.0",
+    "typescript-eslint": "^8.0.1"
+  }
+}
