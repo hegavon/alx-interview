@@ -3,7 +3,7 @@
 
 
 def isWinner(x, nums):
-    '''Determines the winner of each game round based on prime number selection.'''
+    '''Picks the winner of each game round based on prime number selection.'''
     winnerCounter = {'Maria': 0, 'Ben': 0}
 
     # Loop through each round
