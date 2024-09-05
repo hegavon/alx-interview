@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Prime Game.
 
-This module contains the function `isWinner` which determines the winner 
-of the Prime Game between two players, Maria and Ben.
+This module contains the function `isWinner`
+which determines the winner of the Prime Game between two players Maria and Ben
 """
 
 
@@ -16,7 +16,7 @@ def isWinner(x, nums):
 
     Parameters:
     x (int): The number of rounds.
-    nums (list): A list of integers representing the upper bounds for each 
+    nums (list): A list of integers representing the upper bounds for each
     round's set of numbers.
 
     Returns:
@@ -27,7 +27,7 @@ def isWinner(x, nums):
         return None
     max_num = max(nums)
 
-    # Create a boolean list to filter prime numbers using the Sieve of Eratosthenes
+    # Create a boolean list to filter prime numbers using Sieve of Eratosthenes
     filter = [True for _ in range(max(max_num + 1, 2))]
     for i in range(2, int(pow(max_num, 0.5)) + 1):
         if not filter[i]:
